@@ -27,35 +27,14 @@
                       <%= post_image.user.name %>
                     </li>
                     <li>
-                    <a href="#">23 コメント</a>
+                    <%= link_to "#{post_image.post_comments.count} コメント",post_image_path(post_image.id) %>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
             <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-              <div class="block-content">
-                <%= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>
-                <h3 class="block-title">
-                  <a href="#"><i class="fa fa-map-marker"></i> ショップ名</a>
-                </h3>
-                <p>この画像に関する説明</p>
-                <ul class="inline-meta">
-                  <li>By
-                    <a href="#">投稿者名</a>
-                  </li>
-                  <li>
-                    <a href="#">23 コメント</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <%= paginate @post_images %>
         </div>
       </div>
     </div>
